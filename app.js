@@ -14,7 +14,7 @@ const indexRouter = require('./src/routes/index.router');
 const authRouter = require('./src/routes/auth.router');
 const filesRouter = require('./src/routes/files.router');
 const profileRouter = require('./src/routes/profile.router');
-// hbs.registerPartials(path.join(process.env.PWD, 'src', 'views', 'partials'));
+hbs.registerPartials(path.join(process.env.PWD, 'src', 'views', 'partials'));
 
 app.set('view engine', 'hbs');
 app.set('views', path.join(process.env.PWD, 'src', 'views'));
