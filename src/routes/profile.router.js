@@ -9,6 +9,11 @@ router.get('/:id', (req, res)=>{
   res.render('profile')
 });
 
+router.get('/edit',(req,res)=>{
+  res.render('edit')
+})
+
+
 router.put('/:id', async (req, res) => {
   let entry;
 
