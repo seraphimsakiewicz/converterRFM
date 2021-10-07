@@ -37,6 +37,8 @@ app.use(session({
   app.use((req, res, next) => {
     res.locals.userId = req.session?.userId;
     res.locals.userName = req.session?.userName;
+    res.locals.userSurname = req.session?.userSurname;
+    res.locals.userEmail = req.session?.userEmail;
     
     next();
   });

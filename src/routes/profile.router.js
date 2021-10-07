@@ -2,13 +2,25 @@ const router = require('express').Router();
 const { User,  Origin, Converter} = require('../db/models');
 
 
-router.get('/:id', async (req, res)=>{
+router.get('/', async (req, res)=>{
   let files
+  let id = req.params.id
   try{
-    files = await Origin.findAll({order:[['id', 'DESC']], where: {'uderId': req.params.id}, attributes:['path']})
-    res.render(`profile/${id}`, {files})
+    files = await Converter.findAll({
+
+      include: [
+        {
+          model: Origin,
+          where: {
+            'userId': userId
+          }
+        }
+      ]
+
+    })
+    res.render(`profile`, {files})
   } catch (err){
-    res.render(`profile/${id}`)
+    res.render(`profile`)
   }
 });
 

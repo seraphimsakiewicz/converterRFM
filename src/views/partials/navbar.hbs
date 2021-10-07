@@ -1,16 +1,16 @@
 <div class="container-width">
   <header class="header">
-    <img
-      class="nav-logo"
-      src="https://sa.kapamilya.com/absnews/abscbnnews/media/abs-cbnnews/a_images/thumbnails/011614_rfm.jpg"
-      alt=""
-    />
+    <img class="nav-logo"
+      src="https://sa.kapamilya.com/absnews/abscbnnews/media/abs-cbnnews/a_images/thumbnails/011614_rfm.jpg" alt="" />
     <nav class="nav">
       <a href="/about" class="nav-link">About RFM</a>
-      <a href="/profile" class="nav-link">Profile</a>
+      {{#if userName}}
+      <a href="/profile" class="nav-link">{{userName}}`–s profile </a>
+      <a href="/auth/logout" class="nav-link">Logout</a>
+      {{else}}
       <a href="/auth/signup" class="nav-link">Register</a>
       <a href="/auth/signin" class="nav-link">Login</a>
-      <a href="/auth/logout" class="nav-link">Logout</a>
+      {{/if}}
     </nav>
     <button class="header-button">
       <a href="tel:12345678">Позвонить</a>
