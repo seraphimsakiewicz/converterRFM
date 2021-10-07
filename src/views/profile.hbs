@@ -1,4 +1,19 @@
-<div class="profile-content">
-  <p><span>Профиль</span></p>
-  <p></p>
+<div class="container-register">
+<ul>
+    <li>
+        First Name: {{userName}}
+    </li>
+    <li>
+        Last Name: {{userSurname}}
+    </li>
+     <li>
+        Email: {{userEmail}}
+    </li>
+    {{#each files}}
+     <li> //получаем массив имя всех файлов.
+         Files:
+        <a href= '{{this.url}}'>{{this.name}}</a>
+    </li>
+    {{/each}}
+</ul>
 </div>

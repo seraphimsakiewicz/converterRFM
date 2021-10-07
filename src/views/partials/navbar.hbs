@@ -1,33 +1,19 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">RFM</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="/about">RFM analysis<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/profile">Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-      {{#if userName}}
-      <li class="nav-item">
-        <a class="nav-link" href="/auth/logout">Logout</a>
-      </li>
-      <li class="nav-item">{{userName}}</li>
-      {{else}}
-      <li class="nav-item">
-        <a class="nav-link" href="/auth">Login</a>
-      </li>
-      {{/if}}
-    </ul>
-  </div>
-</nav>
+<div class="container-width">
+  <header class="header">
+    <img
+      class="nav-logo"
+      src="https://sa.kapamilya.com/absnews/abscbnnews/media/abs-cbnnews/a_images/thumbnails/011614_rfm.jpg"
+      alt=""
+    />
+    <nav class="nav">
+      <a href="/about" class="nav-link">About RFM</a>
+      <a href="/profile" class="nav-link">Profile</a>
+      <a href="/auth/signup" class="nav-link">Register</a>
+      <a href="/auth/signin" class="nav-link">Login</a>
+      <a href="/auth/logout" class="nav-link">Logout</a>
+    </nav>
+    <button class="header-button">
+      <a href="tel:12345678">Позвонить</a>
+    </button>
+  </header>
+</div>

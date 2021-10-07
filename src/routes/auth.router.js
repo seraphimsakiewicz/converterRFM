@@ -2,9 +2,15 @@ const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const { User } = require('../db/models');
 
-router.get('', (req,res)=>{
-  res.render('auth')
+router.get('/signin', (req,res)=>{
+  res.render('login')
 });
+
+router.get('/signup', (req,res)=>{
+  res.render('register')
+});
+
+
 
 router.post('/signup', async (req, res)=>{
   try{
@@ -18,7 +24,7 @@ router.post('/signup', async (req, res)=>{
     req.session.userSurname = currUser.surname;
     res.redirect('/');
   } catch (err){
-    res.render('auth', {error: 'Вы заполнили не все поля, либо пользователь с таким email уже зарегистрирован.'})
+    res.render('register', {error: 'Вы заполнили не все поля, либо пользователь с таким email уже зарегистрирован.'})
   }
 });
 
@@ -26,7 +32,7 @@ router.post('/signin', async (req, res)=>{
   const {email, password} = req.body;
   const currUser = await User.findOne({where: { email } });
   if ((!currUser) || !(await bcrypt.compare(password, currUser?.password))){
-    return res.render('auth', {error: 'Вы ввели неправильный логин или пароль.'})
+    return res.render('login', {error: 'Вы ввели неправильный логин или пароль.'})
   }
     req.session.userId = currUser.id;
     req.session.userName = currUser.name;
