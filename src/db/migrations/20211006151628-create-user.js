@@ -12,6 +12,10 @@ module.exports = {
         type: Sequelize.STRING,
         unique: true,
         allowNull: false,
+        validate:{
+          isEmail:true
+        }
+
       },
       name: {
         type: Sequelize.STRING,

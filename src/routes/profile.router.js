@@ -24,6 +24,11 @@ router.get('/', async (req, res)=>{
   }
 });
 
+router.get('/edit',(req,res)=>{
+  res.render('edit')
+})
+
+
 router.put('/:id', async (req, res) => {
   let entry;
 
