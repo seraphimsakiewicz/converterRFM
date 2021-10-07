@@ -1,8 +1,15 @@
 const router = require('express').Router();
-const { User } = require('../db/models');
+const { User,  Origin, Converter} = require('../db/models');
 
-router.get('/:id', (req, res)=>{
-  res.render('profile')
+
+router.get('/:id', async (req, res)=>{
+  let files
+  try{
+    files = await Origin.findAll({order:[['id', 'DESC']], where: {'uderId': req.params.id}, attributes:['path']})
+    res.render(`profile/${id}`, {files})
+  } catch (err){
+    res.render(`profile/${id}`)
+  }
 });
 
 router.put('/:id', async (req, res) => {
@@ -14,7 +21,7 @@ router.put('/:id', async (req, res) => {
     return res.json({ isUpdateSuccessful: false, errorMessage: 'Не удалось обновить запись в базе данных.' });
   }
 
-  return res.redirect('/profile/:id');
+  return res.redirect(`profile/${id}`);
 });
 
 
