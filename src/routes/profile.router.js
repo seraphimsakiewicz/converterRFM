@@ -1,6 +1,10 @@
 const router = require('express').Router();
 const { User } = require('../db/models');
 
+router.get('/',(req, res)=>{
+  res.render('profile')
+});
+
 router.get('/:id', (req, res)=>{
   res.render('profile')
 });

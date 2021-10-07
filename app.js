@@ -18,7 +18,6 @@ hbs.registerPartials(path.join(process.env.PWD, 'src', 'views', 'partials'));
 
 app.set('view engine', 'hbs');
 app.set('views', path.join(process.env.PWD, 'src', 'views'));
-
 app.use(express.static(path.join(process.env.PWD, 'public')));
 
 app.use(express.json()); // <- 'application/json'
