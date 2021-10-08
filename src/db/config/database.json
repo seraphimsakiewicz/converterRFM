@@ -11,7 +11,7 @@
 	"test": {
 		"username": "converter",
 		"password": "123",
-		"database": "converter",
+		"database": "converterdb",
 		"host": "127.0.0.1",
 		"dialect": "postgres",
 		"seederStorage": "sequelize",
@@ -20,7 +20,7 @@
 	"production": {
 		"username": "converter",
 		"password": "123",
-		"database": "converter",
+		"database": "converterdb",
 		"host": "127.0.0.1",
 		"dialect": "postgres",
 		"seederStorage": "sequelize",
