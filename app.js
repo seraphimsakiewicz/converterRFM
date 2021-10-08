@@ -13,7 +13,6 @@ const { User } = require('./src/db/models');
 
 const indexRouter = require('./src/routes/index.router');
 const authRouter = require('./src/routes/auth.router');
-const filesRouter = require('./src/routes/files.router');
 const profileRouter = require('./src/routes/profile.router');
 hbs.registerPartials(path.join(process.env.PWD, 'src', 'views', 'partials'));
 
@@ -56,7 +55,6 @@ app.use(async (req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
-app.use('/files', filesRouter);
 app.use('/profile', profileRouter)
 
 app.listen(PORT, () => {

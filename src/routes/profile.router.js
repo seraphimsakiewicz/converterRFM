@@ -31,7 +31,7 @@ router.get('/', async (req, res)=>{
 // })
 
 
-router.put('/edit', async (req, res) => {
+router.put('/edit/:id', async (req, res) => {
   let entry;
   try { //, password: req.body.password
     entry = await User.update({ name: req.body.name, email: req.body.email, surname: req.body.surname },{where:{id: req.params.id}, returning: true, plain: true});
