@@ -27,5 +27,18 @@ router.post('', uploadMulter.single('file'), async (req, res) => {
   }
 
 })
+// return res.redirect(`/download`)
+router.get('/download', async function (req, res) {
+  //find filePath of last file added.
+  const found= await Origin.findAll({ //converted db findAll
+    raw:true,
+    limit: 1,
+    where: {
+    },
+    order: [['createdAt', 'DESC']]
+  })
+  const file = found[0].path;
+  res.download(file)
+})
 
 module.exports = router;
