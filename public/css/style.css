@@ -27,7 +27,7 @@ a{
 }
 .header-button{
     padding: 10px 20px;
-    background-color: green;
+    background-color: orange;
     outline: none;
     border: none;
     border-radius: 10px;
@@ -67,12 +67,13 @@ a{
 .regicter-input{
     margin-bottom: 15px;
 }
-.regicter-button{
+.register-button{
     padding: 10px 20px;
     background-color: green;
     outline: none;
     border: none;
     border-radius: 5px;
+    width: 370px;
 }
 /* body{
   background-color: black;
@@ -130,7 +131,59 @@ a{
   -webkit-animation: spin 1.5s linear infinite;
   animation: spin 1.5s linear infinite;
 }
-
+.converter-form{
+  display: flex;
+  flex-direction: column;
+}
+.header-link__tel{
+  color: white;
+}
+.convert-button{
+  font-size: 24px;
+}
+.login-form{
+  display: flex;
+  flex-direction: column;
+}
+.register-form{
+  /* display: flex; */
+  flex-direction: column;
+}
+.login-input{
+  padding: 10px 5px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  outline: none;
+}
+.login-button{
+  border-radius: 10px;
+  border: none;
+  overflow: none;
+  padding: 10px 20px;
+  color: white;
+  background-color: green;
+}
+.convert-title{
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+.profile-button{
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+.forform{
+  display: none;
+}
+.profile-ul{
+  list-style: none;
+}
+.profile-item{
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 34px;
+}
 @keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
