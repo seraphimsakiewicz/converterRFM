@@ -4,7 +4,7 @@ const { User,  Origin, Converter} = require('../db/models');
 
 router.get('/', async (req, res)=>{
   let files;
-  let id = req.params.id
+  let id = req.session.userId
   try{
     files = await Converter.findAll({
 
@@ -12,7 +12,7 @@ router.get('/', async (req, res)=>{
         {
           model: Origin,
           where: {
-            'userId': userId
+            'userId': id
           }
         }
       ]
@@ -21,6 +21,7 @@ router.get('/', async (req, res)=>{
     console.log(files)
     return res.render('profile', { files })
   } catch (err){
+    console.log(err)
     res.render('profile')
   }
 });
@@ -42,5 +43,13 @@ router.put('/edit', async (req, res) => {
   return res.sendStatus(200);
 });
 
-
+router.post('/download/:id', async (req,res)=>{
+  let id = req.params.id
+  try {
+    const file = await Converter.findOne({where: {id}})
+    res.sendFile(file.path)
+  } catch (err){
+    res.sendStatus(500)
+  }
+})
 module.exports = router;

@@ -13,11 +13,11 @@ router.get('/about', (req, res) => {
 });
 
 router.post('', uploadMulter.single('file'), async (req, res) => {
-  console.log('+___++++++++++++++)))))))))))))', req.file)
+  
   try {
     const originFile = req.file;
-    const fileName = originFile.filename;
-    const filePath = path.join(process.env.PWD, `../uploadedFiles/${fileName}`)
+    // const fileName = originFile.filename;
+    const filePath = originFile.path;
     const userId = req.session?.userId;
     await Origin.create({ path: filePath, userId: userId })
     return res.sendStatus(200)

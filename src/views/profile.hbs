@@ -17,16 +17,19 @@
         {{userEmail}}
         <input name='email' class="forform" value={{userEmail}} />
       </li>
-      {{#each files}}
-        <li>
-          {{!-- получаем массив имя всех файлов. Files: --}}
-          <a href="{{this.url}}">{{this.name}}</a>
-        </li>
-      {{/each}}
       <button type="button" class="btn btn-primary btn-lg" id="editButton">Edit
         Profile</button>
     </form>
   </ul>
-
+  <ul data-type-filelinks>
+  
+      {{#each files}}
+        <li>
+          {{!-- получаем массив имя всех файлов. Files: --}}
+          <a data-id="{{this.id}}">{{this.path}}</a>
+        </li>
+      {{/each}}
+</ul>
 </div>
+<script defer src="/js/download.js"></script>
 

@@ -41,7 +41,6 @@ app.use((req, res, next) => {
 });
 
 app.use(async (req, res, next) => {
-  console.log(req.session?.userId);
   if(req.session.userId) {
     let currUser = await User.findOne({ where: { id: req.session?.userId } })
   
