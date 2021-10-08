@@ -16,7 +16,7 @@ const originFile = req.file;
 const filePath = originFile.path;
 const userId = req.session?.userId;
 await Origin.create({path: filePath, userId: userId})
-return res.redirect(`/profile/${userId}`)
+return res.redirect(`/profile`)
 })
 
 module.exports = router;

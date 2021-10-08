@@ -1,40 +1,34 @@
 <div class="container-register">
-  <button
-    type="button"
-    class="btn btn-primary btn-lg"
-    id='editButton'
-  >Edit Profile</button>
-  <ul>
+  <ul class="profile-ul">
       <form >
-    <li>
+    <li class="profile-item">
       First Name:
       {{userName}}
       <input class= "forform" value = {{userName}}>
     </li>
-    <li>
+    <li class="profile-item">
       Last Name:
       {{userSurname}}
       <input class= "forform" value = {{userSurname}}>
     </li>
-    <li>
+    <li class="profile-item">
       Email:
       {{userEmail}}
       <input class= "forform" value = {{userEmail}}>
     </li>
     {{#each files}}
-      <li>
+      <li class="profile-item">
         //получаем массив имя всех файлов. Files:
         <a href="{{this.url}}">{{this.name}}</a>
       </li>
     {{/each}}
     </form>
   </ul>
+    <button
+    type="button"
+    class="btn btn-primary btn-lg profile-button"
+    id='editButton'
+  >Edit Profile</button>
 
 </div>
 
-<style>
-      
-.forform{
-  display: none;
-}
-</style>

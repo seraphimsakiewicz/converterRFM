@@ -38,7 +38,7 @@ router.put('/:id', async (req, res) => {
     return res.json({ isUpdateSuccessful: false, errorMessage: 'Не удалось обновить запись в базе данных.' });
   }
 
-  return res.redirect(`profile/${id}`);
+  return res.redirect(`profile/`);
 });
 
 

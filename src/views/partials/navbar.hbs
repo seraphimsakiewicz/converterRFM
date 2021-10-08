@@ -10,7 +10,7 @@
       <a href="/about" class="nav-link">About RFM</a>
 
       {{#if userName}}
-        <a href="/profile/{{userId}}" class="nav-link">Profile {{userName}}</a>
+        <a href="/profile" class="nav-link">Profile {{userName}}</a>
         <a href="/auth/logout" class="nav-link">Logout</a>
       {{else}}
         <a href="/auth/signup" class="nav-link">Register</a>
@@ -18,7 +18,7 @@
       {{/if}}
     </nav>
     <button class="header-button">
-      <a href="tel:12345678">Позвонить</a>
+      <a  class="header-link__tel" href="tel:12345678">Позвонить</a>
     </button>
   </header>
 </div>
