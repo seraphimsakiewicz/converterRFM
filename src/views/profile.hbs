@@ -21,14 +21,17 @@
       {{userEmail}}
       <input class= "forform" value = {{userEmail}}>
     </li>
-    {{#each files}}
-      <li>
-        //получаем массив имя всех файлов. Files:
-        <a href="{{this.url}}">{{this.name}}</a>
-      </li>
-    {{/each}}
+    
+    
     </form>
   </ul>
+  <ul class="fileurls">
+    {{#each files}}
+      <li>
+        <a href="{{this.path}}">{{this.path}}</a>
+      </li>
+    {{/each}}
+    </ul>
 
 </div>
 

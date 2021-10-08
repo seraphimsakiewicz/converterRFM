@@ -3,7 +3,7 @@ const { User,  Origin, Converter} = require('../db/models');
 
 
 router.get('/', async (req, res)=>{
-  let files
+  let files;
   let id = req.params.id
   try{
     files = await Converter.findAll({
@@ -18,9 +18,10 @@ router.get('/', async (req, res)=>{
       ]
 
     })
-    res.render(`profile`, {files})
+    console.log(files)
+    return res.render('profile', { files })
   } catch (err){
-    res.render(`profile`)
+    res.render('profile')
   }
 });
 
@@ -29,7 +30,7 @@ router.get('/edit',(req,res)=>{
 })
 
 
-router.put('/:id', async (req, res) => {
+router.put('/edit', async (req, res) => {
   let entry;
 
   try {
@@ -38,7 +39,7 @@ router.put('/:id', async (req, res) => {
     return res.json({ isUpdateSuccessful: false, errorMessage: 'Не удалось обновить запись в базе данных.' });
   }
 
-  return res.redirect(`profile/${id}`);
+  return res.redirect(`profile`);
 });
 
 
