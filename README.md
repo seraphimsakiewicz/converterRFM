@@ -1,6 +1,6 @@
 # converterRFM
 1. Install packages 
-copy this: 
+with
 npm i 
 
 2.to setup postgres DB
